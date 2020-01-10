@@ -11,3 +11,209 @@
   background-color: #f2dede;
   border-color: #eed3d7;
 }
+
+/* 
+###### GENERAL
+*/
+
+
+@font-face {
+  font-family: "Europa";
+  src: url("//db.onlinewebfonts.com/t/23c0fcab84d99da0de762de7e220a6e1.eot");
+  src: url("//db.onlinewebfonts.com/t/23c0fcab84d99da0de762de7e220a6e1.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/23c0fcab84d99da0de762de7e220a6e1.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/23c0fcab84d99da0de762de7e220a6e1.woff") format("woff"), url("//db.onlinewebfonts.com/t/23c0fcab84d99da0de762de7e220a6e1.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/23c0fcab84d99da0de762de7e220a6e1.svg#Europa") format("svg");
+}
+
+html,
+body {
+  font-family: 'Europa', 'Helvetica', 'sans-serif';
+}
+
+.rich-text {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.btn {
+  border-radius: 10px;
+}
+
+h2 {
+  font-weight: 600;
+}
+
+p,
+li {
+  font-size: 14pt;
+}
+
+/* 
+###### HEADER
+*/
+
+#header a {
+  font-size: 16pt;
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-weight: 600;
+}
+
+
+/* 
+###### HOMEPAGE 
+*/
+
+.landingpage-panel {
+  padding: 20px;
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+
+/* Footer */
+#footer {
+  background-color: #f76c6c;
+  height: 20px;
+  width: 100%
+}
+
+/* Banner Section */
+
+#banner {
+  padding-top: 150px;
+  padding-bottom: 150px;
+  text-align: center;
+  background-color: #a8d0e6;
+}
+
+#banner .btn {
+  width: 50%;
+  max-width: 400px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  font-size: 20pt;
+
+  color: #fff;
+  font-weight: 600;
+  background-color: #f76c6c;
+  border: 1px solid #a8d0e6;
+
+  -webkit-box-shadow: 6px 9px 5px 0px rgba(0, 0, 0, 0.11);
+  -moz-box-shadow: 6px 9px 5px 0px rgba(0, 0, 0, 0.11);
+  box-shadow: 6px 9px 5px 0px rgba(0, 0, 0, 0.11);
+}
+
+#banner .btn:hover {
+  background-color: #f38282;
+}
+
+/* About Me Section */
+
+#about-me {
+  text-align: center;
+  width: 100%;
+  margin: auto;
+  background-color: #f76c6c8f;
+  /* color: aliceblue; */
+}
+
+#about-me .row {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#aboutme_text {
+  display: inline-block;
+  vertical-align: top;
+  padding: 10px;
+  text-align: right;
+}
+
+
+#aboutme_text ul {
+  list-style: none;
+  padding-inline-start: 0px;
+
+}
+
+#aboutme_photo {
+  display: inline-block;
+  vertical-align: top;
+  width: inherit;
+  padding: 10px;
+}
+
+#about-me .btn {
+  width: 50%;
+  max-width: 200px;
+  margin: 10px;
+
+  font-size: 16pt;
+  font-weight: 600;
+
+  color: #000;
+  background-color: white;
+  border: 1px solid #a8d0e6;
+
+  -webkit-box-shadow: 6px 9px 5px 0px rgba(0, 0, 0, 0.11);
+  -moz-box-shadow: 6px 9px 5px 0px rgba(0, 0, 0, 0.11);
+  box-shadow: 6px 9px 5px 0px rgba(0, 0, 0, 0.11);
+}
+
+#about-me .btn:hover {
+  background-color: #a8d0e6;
+}
+
+/* Portfolio items */
+
+#portfolio-items {
+  background-color: #f8e9a1;
+}
+
+#portfolio-items .card {
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: transparent;
+}
+
+#portfolio-items .card-body {
+  border: solid 1px #9e9359;
+  border-radius: 10px;
+  background-color: white;
+  -webkit-box-shadow: 6px 9px 5px 0px rgba(0, 0, 0, 0.11);
+  -moz-box-shadow: 6px 9px 5px 0px rgba(0, 0, 0, 0.11);
+  box-shadow: 6px 9px 5px 0px rgba(0, 0, 0, 0.11);
+}
+
+
+#portfolio-items .card-body .row {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#portfolio-items .card-body img {
+  max-width: 100%;
+  max-height: 150px;
+}
+
+#portfolio-items .btn {
+  width: 40%;
+  max-width: 200px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  color: #fff;
+  font-size: 14pt;
+  font-weight: 600;
+  background-color: #f76c6c;
+  border: 1px solid #fff;
+
+  -webkit-box-shadow: 3px 5px 3px 0px rgba(0, 0, 0, 0.11);
+  -moz-box-shadow: 3px 5px 3px 0px rgba(0, 0, 0, 0.11);
+  box-shadow: 3px 5px 3px 0px rgba(0, 0, 0, 0.11);
+}
+
+#portfolio-items .btn:hover {
+  background-color: #f38282;
+}
