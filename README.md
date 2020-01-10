@@ -1,6 +1,5 @@
 ### This repo is the one-day-build of my professional portfolio website (www.findram.dev)
 
-:License: MIT
 __________
 
 # Features
