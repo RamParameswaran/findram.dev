@@ -73,12 +73,24 @@ THIRD_PARTY_APPS = [
     "crispy_forms",
     "allauth",
 
-    "wagtail",
+    'wagtail.contrib.forms',
+    'wagtail.contrib.redirects',
+    'wagtail.embeds',
+    'wagtail.sites',
+    'wagtail.users',
+    'wagtail.snippets',
+    'wagtail.documents',
+    'wagtail.images',
+    'wagtail.search',
+    'wagtail.admin',
+    'wagtail.core',
+
     "taggit",
 ]
 
 LOCAL_APPS = [
     "findram.users.apps.UsersConfig",
+    "findram.frontend.apps.FrontendConfig",
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -135,6 +147,9 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+
+    'wagtail.core.middleware.SiteMiddleware',
+    'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 ]
 
 # STATIC
@@ -249,6 +264,9 @@ LOGGING = {
     "root": {"level": "INFO", "handlers": ["console"]},
 }
 
+
+# Wagtail
+WAGTAIL_SITE_NAME = 'findram.dev'
 
 # Your stuff...
 # ------------------------------------------------------------------------------
