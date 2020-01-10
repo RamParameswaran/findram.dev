@@ -11,7 +11,7 @@ with open('SECRET_KEY.txt', 'r') as f:
     SECRET_KEY = x[0].strip()
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1"]
+ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1", "159.89.207.61"]
 
 # CACHES
 # ------------------------------------------------------------------------------

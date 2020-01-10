@@ -9,7 +9,7 @@ with open('SECRET_KEY.txt', 'r') as f:
     SECRET_KEY = x[0].strip()
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ["findram.dev"]
+ALLOWED_HOSTS = ["findram.dev", "159.89.207.61"]
 
 # DATABASES
 # ------------------------------------------------------------------------------

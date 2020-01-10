@@ -203,10 +203,10 @@ li {
   margin-top: 20px;
   margin-bottom: 20px;
 
-  color: #fff;
+  color: rgba(0, 0, 0, 0.863);
   font-size: 14pt;
   font-weight: 600;
-  background-color: #f76c6c;
+  background-color: #a8d0e6;
   border: 1px solid #fff;
 
   -webkit-box-shadow: 3px 5px 3px 0px rgba(0, 0, 0, 0.11);
@@ -215,5 +215,5 @@ li {
 }
 
 #portfolio-items .btn:hover {
-  background-color: #f38282;
+  background-color: #93cae7;
 }
