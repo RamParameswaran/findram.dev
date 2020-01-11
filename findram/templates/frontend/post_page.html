@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load wagtailimages_tags %}
+{% load wagtailcore_tags %}
+
+{% block content%}
+
+<!-- Header  -->
+{% include 'header.html' %}
+
+<!-- Banner  -->
+<div class="landingpage-panel" id="banner">
+  {{page.body|richtext}}
+</div>
+
+
+<!-- Footer -->
+
+<div id="footer"></div>
+
+{% endblock %}

@@ -64,6 +64,7 @@
               {% for tag in item.item_tags.all %}
               <span class="badge badge-pill badge-warning">{{tag}}</span>
               {% endfor %}
+              {% if item.in_progress%}<span style="display: block; padding-top:10px"><b><i>[Project in progress]</i></b></span>{% endif %}
             </div>
             <div class="col-5 mx-auto">
               {% image item.item_image min-200x100 as item_img %}
