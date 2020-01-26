@@ -45,6 +45,15 @@ li {
   font-size: 14pt;
 }
 
+@media screen and (max-width: 600px) {
+
+  p,
+  li {
+    font-size: 12pt;
+  }
+}
+
+
 /* 
 ###### HEADER
 */
@@ -85,7 +94,9 @@ li {
 }
 
 #banner .btn {
-  width: 50%;
+  padding-left: 75px;
+  padding-right: 75px;
+
   max-width: 400px;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -143,8 +154,8 @@ li {
 }
 
 #about-me .btn {
-  width: 50%;
-  max-width: 200px;
+  width: 80%;
+  max-width: 250px;
   margin: 10px;
 
   font-size: 16pt;
@@ -194,13 +205,15 @@ li {
 #portfolio-items .card-body img {
   max-width: 100%;
   max-height: 150px;
+
+  margin-top: 20px;
 }
 
 #portfolio-items .btn {
-  width: 40%;
+  width: 80%;
   max-width: 200px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 
   color: rgba(0, 0, 0, 0.863);
   font-size: 14pt;
@@ -221,6 +234,11 @@ li {
   font-size: 12pt;
 }
 
+@media screen and (max-width: 600px) {
+  #portfolio-items .badge-pill {
+    font-size: 10pt;
+  }
+}
 
 #portfolio-items .badge {
   padding: .15em .4em;

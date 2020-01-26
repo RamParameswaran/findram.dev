@@ -4,14 +4,50 @@
 {% load wagtailimages_tags %}
 {% load wagtailcore_tags %}
 
+{% block title %} Ram Parameswaran | {{page.title}} {% endblock %}
+{% block description %}{{page.seo_description}}{% endblock %}
+
 {% block content%}
 
 <!-- Header  -->
 {% include 'header.html' %}
-
 <!-- Banner  -->
-<div class="landingpage-panel" id="banner">
-  {{page.body|richtext}}
+<div class="landingpage-panel" id="blog-post">
+
+        <div class="card col-md-10 col-12 mx-auto">
+            <div class="card-body">
+
+                    <!-- Card title block, image, and tags -->
+                    <div class="row">
+
+                        <div class="col-12 blog-item-section">
+                        <span style="display: block"><h3>{{page.title}}</h3></span>
+                        <span style="display: block"><small>by:</small> {{page.author}}</span>
+                        <span style="display: block">
+                                {% for tag in page.tags.all %}
+                                <span class="badge badge-pill badge-warning"><small>{{tag}}</small></span>
+                                {% endfor %}
+                        </span>
+                        </div>
+
+                        <div class="col-12 blog-item-section">
+                            <div style="float: right">
+                                {% image page.cover_photo original as img %}
+                                <img style="max-width: 550px; width: 100%" src="{{img.url}}" alt="{{img.alt}}">
+                            </div>
+                            {{page.body|richtext}}                            
+                        </div>
+
+                        <div class="col-12 blog-item-section">
+                            <span style="padding-left: 20px">
+                                <a href="/blog"><i class="fas fa-angle-double-left"></i> Read more</a>
+                            </span> 
+                        </div>
+
+                    </div>
+
+            </div>
+        </div>
 </div>
 
 

@@ -4,6 +4,9 @@
 {% load wagtailimages_tags %}
 {% load wagtailcore_tags %}
 
+{% block title %} Ram Parameswaran | Web Developer {% endblock %}
+{% block description %}Ram Parameswaran - Django & React.js Developer, data geek and maker-enthusiast. Ram makes functional web applications to solve your business problems{% endblock %}
+
 {% block content%}
 
 <!-- Header  -->
@@ -59,14 +62,14 @@
 
           <!-- Card title block, image, and tags -->
           <div class="row">
-            <div class="col-7">
+            <div class="col-lg-6 col-12">
               <h3>{{item.item_title}}</h3>
               {% for tag in item.item_tags.all %}
               <span class="badge badge-pill badge-warning">{{tag}}</span>
               {% endfor %}
               {% if item.in_progress%}<span style="display: block; padding-top:10px"><b><i>[Project in progress]</i></b></span>{% endif %}
             </div>
-            <div class="col-5 mx-auto">
+            <div class="col-lg-6 col-12 mx-auto text-center">
               {% image item.item_image min-200x100 as item_img %}
               <img src="{{item_img.url}}" alt="{{item_img.alt}}">
             </div>
@@ -81,7 +84,7 @@
 
           <!-- Card links -->
           <div class="row">
-            <div class="col-12">
+            <div class="col-12 text-center">
 
               {% if item.item_link %}
               <a class="btn btn-primary portfolioitem-link" href="{{item.item_link}}" target="_blank"><i

@@ -18,7 +18,7 @@ from modelcluster.contrib.taggit import ClusterTaggableManager
 from taggit.models import TaggedItemBase
 
 all_features = ['h1', 'h2', 'h3', 'h4', 'h5',
-                'h6', 'bold', 'italic', 'ol', 'ul', 'hr',
+                'h6', 'bold', 'italic', 'underline', 'ol', 'ul', 'hr',
                 'link', 'document-link', 'image', 'embed',
                 'code', 'superscript', 'subscript', 'strikethrough', 'blockquote']
 
@@ -107,6 +107,8 @@ class PostPage(Page):
     template = "frontend/post_page.html"
 
     body = RichTextField(blank=True, features=all_features)
+    blurb = RichTextField(blank=True, features=all_features)
+    seo_description = models.CharField(blank=True, null=True, max_length=150)
     author = models.CharField(default="Ram Parameswaran", blank=True, null=True, max_length=200)
     tags = ClusterTaggableManager(through=BlogPostTag, blank=True)
     cover_photo = models.ForeignKey(
@@ -115,6 +117,8 @@ class PostPage(Page):
 
     content_panels = Page.content_panels + [
         FieldPanel('body', classname="full"),
+        FieldPanel('blurb', classname="full"),
+        FieldPanel('seo_description', classname="full"),
         FieldPanel('author', classname="full"),
         FieldPanel('tags', classname="full"),
         ImageChooserPanel('cover_photo'),
