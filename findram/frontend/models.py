@@ -17,10 +17,12 @@ from modelcluster.models import ClusterableModel
 from modelcluster.contrib.taggit import ClusterTaggableManager
 from taggit.models import TaggedItemBase
 
-all_features = ['h1', 'h2', 'h3', 'h4', 'h5',
-                'h6', 'bold', 'italic', 'underline', 'ol', 'ul', 'hr',
-                'link', 'document-link', 'image', 'embed',
-                'code', 'superscript', 'subscript', 'strikethrough', 'blockquote']
+all_features = [  # 'h1', 'h2', 'h3',
+    'h4',  # 'h5', 'h6',
+    'bold', 'italic', 'underline', 'ol', 'ul', 'hr',
+    'link',  # 'document-link', 'image', 'embed',
+    'code',  # 'superscript', 'subscript', 'strikethrough',
+    'blockquote']
 
 
 class PortfolioItemTag(TaggedItemBase):
