@@ -20,7 +20,8 @@ from taggit.models import TaggedItemBase
 all_features = [  # 'h1', 'h2', 'h3',
     'h4',  # 'h5', 'h6',
     'bold', 'italic', 'underline', 'ol', 'ul', 'hr',
-    'link',  # 'document-link', 'image', 'embed',
+    'link',
+    'document-link', 'image', 'embed',
     'code',  # 'superscript', 'subscript', 'strikethrough',
     'blockquote']
 
