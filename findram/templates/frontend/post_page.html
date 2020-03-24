@@ -12,39 +12,60 @@
 <!-- Header  -->
 {% include 'header.html' %}
 <!-- Banner  -->
-<div class="landingpage-panel" id="blog-post">
+<div id="blog-post">
 
-        <div class="card col-md-10 col-12 mx-auto">
-            <div class="card-body">
+        <div class="container">
+            <div class="blog-post">
+                <div class="article">
 
-                    <!-- Card title block, image, and tags -->
-                    <div class="row">
+                        <!-- Card title block, image, and tags -->
+                        <div class="row content">
 
-                        <div class="col-12 blog-item-section">
-                        <span style="display: block"><h3>{{page.title}}</h3></span>
-                        <span style="display: block"><small>by:</small> {{page.author}}</span>
-                        <span style="display: block">
+                            <div class="col-12 blog-item-section">
+                            <span style="display: block"><h3><b>{{page.title}}</b></h3></span>
+                            <span style="display: block"><span style="color: grey">By</span> {{page.author}}</span>
+                            <span style="display: block">
                                 {% for tag in page.tags.all %}
                                 <span class="badge badge-pill badge-warning"><small>{{tag}}</small></span>
                                 {% endfor %}
-                        </span>
-                        </div>
-
-                        <div class="col-12 blog-item-section">
-                            <div style="float: right">
-                                {% image page.cover_photo original as img %}
-                                <img style="max-width: 550px; width: 100%" src="{{img.url}}" alt="{{img.alt}}">
+                            </span>
                             </div>
-                            {{page.body|richtext}}                            
+
+                            <hr>
+                            
+                            <div class="col-12 blog-item-section text-center">
+                                {% image page.cover_photo original as img %}
+                                <img style="max-height: 500px" src="{{img.url}}" alt="{{img.alt}}">
+                            </div>
+
+                            <div class="col-12 blog-item-section">
+                                {{page.body|richtext}}                            
+                            </div>
+
+                            <div class="col-12 blog-item-section">
+                                <span style="padding-left: 20px">
+                                    <a href="/blog"><i class="fas fa-angle-double-left"></i> Read more</a>
+                                </span> 
+                            </div>
+
                         </div>
 
-                        <div class="col-12 blog-item-section">
-                            <span style="padding-left: 20px">
-                                <a href="/blog"><i class="fas fa-angle-double-left"></i> Read more</a>
-                            </span> 
-                        </div>
+                </div>
 
+                <div class="author-profile col-xs-12">
+                    <div class="row">
+                        <div class="col-md-2 col-xs-12 author-avatar text-center">
+                        <img src="{% static 'images/Headshot.jpg' %}" itemprop="image">
+                        </div>
+                        <div class="col-md-10 col-xs-12">
+                        <h4 itemprop="name"><span style="color: grey"><small>about</small></span> <a href="/">{{page.author}}</a></h4>
+                        <p itemprop="disambiguatingDescription">
+                            Django & React Developer, Data Geek and Maker-Enthusiast. <br> 
+                            Ram makes web applications that help businesses around the world operate more efficiently.
+                        </p>
+                        </div>
                     </div>
+                </div>
 
             </div>
         </div>
