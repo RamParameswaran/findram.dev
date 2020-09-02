@@ -5,7 +5,8 @@
 {% load wagtailcore_tags %}
 
 {% block title %} Ram Parameswaran | Web Developer {% endblock %}
-{% block description %}Ram Parameswaran - Django & React.js Developer, data geek and maker-enthusiast. Ram makes functional web applications to solve your business problems{% endblock %}
+{% block description %}Ram Parameswaran - Django & React.js Developer, data geek and maker-enthusiast. Ram makes
+functional web applications to solve your business problems{% endblock %}
 
 {% block content%}
 
@@ -14,18 +15,29 @@
 
 <!-- Banner  -->
 <div class="landingpage-panel" id="banner">
-  {{page.banner_title|richtext}}
-  {{page.banner_blurb|richtext}}
+  <h4 style="font-weight: 600; margin-bottom: 20px">Django & React Developer, Data Geek and Maker-Enthusiast</h4>
+  <h3>I make functional web applications to solve your business problems</h3>
   <a href="mailto:ramanan.parameswaran@gmail.com" target="_blank" class="btn btn-primary mx-auto">Get in touch!</a>
 </div>
 
 <!-- About me -->
 <div class="landingpage-panel" id="about-me">
-  <div class="container">
+  <div class="container" style="max-width: 800px">
 
     <div class="row">
       <div class="col-md-8">
-        <div id="aboutme_text">{{page.aboutme_text|richtext}}</div>
+        <div id="aboutme_text">
+          <h4 style="font-weight: 600; margin-bottom: 20px">You found me!</h4>
+          <h4>My name is Ram. I build web applications that help businesses operate more efficiently.</h4>
+          <h5 style="font-weight: 600; margin-top: 20px">Expertise</h5>
+          <ul style="font-size: 1rem">
+            <li>Django and Django Rest Framework</li>
+            <li>React.js</li>
+            <li>Payment processing (Stripe, Chargebee & Adyen)</li>
+            <li>DRM video content delivery</li>
+            <li>Wagtail CMS</li>
+          </ul>
+        </div>
       </div>
       <div class="col-md-4">
         <div id="aboutme_photo">
@@ -35,79 +47,71 @@
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-12">
-        <a class="btn btn-primary" href="https://github.com/RamParameswaran" target="_blank">Github</a>
-        <a class="btn btn-primary" href="https://www.linkedin.com/in/ram-parameswaran/" target="_blank">LinkedIn</a>
-      </div>
+    <div class="col-12">
+      <a class="btn btn-primary" href="https://github.com/RamParameswaran" target="_blank">Github</a>
+      <a class="btn btn-primary" href="https://www.linkedin.com/in/ram-parameswaran/" target="_blank">LinkedIn</a>
     </div>
 
   </div>
 </div>
 
 <!-- Portfolio Items -->
-<div class=" landingpage-panel" id="portfolio-items">
-  <div class="container">
+<div class="landingpage-panel" id="portfolio-items">
+  <div class="container" style="max-width: 800px">
     <div class="row">
       <div class="col-12 text-center">
-        <h2>Selected Portfolio</h2>
-        <br>
+        <h4 style="font-weight: 600; margin-bottom: 20px">Portfolio</h4>
       </div>
     </div>
-    <div class="row">
+
+    <div class="card-columns">
+
       {% for item in self.portfolio_items.all %}
 
-      <div class="card col-md-6 col-12" id="{{item.id}}">
-        <div class="card-body">
-
-          <!-- Card title block, image, and tags -->
-          <div class="row">
-            <div class="col-lg-6 col-12">
-              <h3>{{item.item_title}}</h3>
-              {% for tag in item.item_tags.all %}
-              <span class="badge badge-pill badge-warning">{{tag}}</span>
-              {% endfor %}
-              {% if item.in_progress%}<span style="display: block; padding-top:10px"><b><i>[Project in progress]</i></b></span>{% endif %}
-            </div>
-            <div class="col-lg-6 col-12 mx-auto text-center">
-              {% image item.item_image min-200x100 as item_img %}
-              <img src="{{item_img.url}}" alt="{{item_img.alt}}">
-            </div>
-          </div>
-
-          <!-- Card text -->
-          <div class="row">
-            <div class="col-12">
-              {{item.item_description|richtext}}
-            </div>
-          </div>
-
-          <!-- Card links -->
-          <div class="row">
-            <div class="col-12 text-center">
-
-              {% if item.item_link %}
-              <a class="btn btn-primary portfolioitem-link" href="{{item.item_link}}" target="_blank"><i
-                  class="fas fa-link"> See
-                  live</i></a>
-              {% endif %}
-
-              {% if item.item_sourcecode_link %}
-              <a class="btn btn-primary portfolioitem-link" href="{{item.item_sourcecode_link}}" target="_blank"><i
-                  class="fab fa-github"> Source
-                  code</i></a>
-              {% endif %}
-
-              {% if item.item_blogpost_link %}
-              <a class="btn btn-primary portfolioitem-link" href="{{item.item_blogpost_link}}" target="_blank"><i
-                  class="fab fa-microblog"> Read more...</i></a>
-              {% endif %}
-
-
-            </div>
-          </div>
-
+      <div class="card" id="{{item.id}}" style="padding-bottom: 10px">
+        <!-- Card image -->
+        <div style="text-align: center; margin-bottom: 10px; overflow: hidden">
+          {% image item.item_image original as item_img %}
+          <img src="{{item_img.url}}" alt="{{item_img.alt}}" width="100%">
         </div>
+
+        <!-- Card title block, image, and tags -->
+        <div class="col-12" style="margin-bottom: 10px">
+          <h3>{{item.item_title}}</h3>
+          {% for tag in item.item_tags.all %}
+          <span class="badge badge-pill badge-warning">{{tag}}</span>
+          {% endfor %}
+          <!-- {% if item.in_progress%}<span style="display: block; padding-top:10px"><b><i>[Project in progress]</i></b></span>{% endif %} -->
+        </div>
+
+
+        <!-- Card text -->
+        <div class="col-12">
+          {{item.item_description|richtext}}
+        </div>
+
+        <!-- Card links -->
+
+        <div class="col-12">
+          {% if item.item_link %}
+          <a style="display: block" href="{{item.item_link}}" target="_blank"><i class="fas fa-link">
+              See
+              live</i></a>
+          {% endif %}
+
+          {% if item.item_sourcecode_link %}
+          <a style="display: block" href="{{item.item_sourcecode_link}}" target="_blank"><i class="fab fa-github">
+              Source
+              code</i></a>
+          {% endif %}
+
+          {% if item.item_blogpost_link %}
+          <a style="display: block" href="{{item.item_blogpost_link}}" target="_blank"><i class="fab fa-microblog"> Read
+              more...</i></a>
+          {% endif %}
+        </div>
+
+
       </div>
 
       {% endfor %}
