@@ -11,15 +11,20 @@ APPS_DIR = ROOT_DIR.path("findram")
 
 env = environ.Env()
 
-READ_DOT_ENV_FILE = False
+READ_DOT_ENV_FILE = True
 if READ_DOT_ENV_FILE:
     # OS environment variables take precedence over variables from .env
     env.read_env(str(ROOT_DIR.path(".env")))
 
+SECRET_KEY = env.str(
+    "SECRET_KEY", default="m@+i3r!wv)fn*+23f5sy%vmap6ba_^*iybe5m+%*nxhq1y6jth"
+)
+
 # GENERAL
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#debug
-DEBUG = False
+DEBUG = env.bool("DEBUG", default=True)
+
 # Local time zone. Choices are
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # though not all of them may be available with every OS.
@@ -43,9 +48,9 @@ LOCALE_PATHS = [ROOT_DIR.path("locale")]
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'findram.db',
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": "findram.db",
     }
 }
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
@@ -72,19 +77,17 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = [
     "crispy_forms",
     "allauth",
-
-    'wagtail.contrib.forms',
-    'wagtail.contrib.redirects',
-    'wagtail.embeds',
-    'wagtail.sites',
-    'wagtail.users',
-    'wagtail.snippets',
-    'wagtail.documents',
-    'wagtail.images',
-    'wagtail.search',
-    'wagtail.admin',
-    'wagtail.core',
-
+    "wagtail.contrib.forms",
+    "wagtail.contrib.redirects",
+    "wagtail.embeds",
+    "wagtail.sites",
+    "wagtail.users",
+    "wagtail.snippets",
+    "wagtail.documents",
+    "wagtail.images",
+    "wagtail.search",
+    "wagtail.admin",
+    "wagtail.core",
     "taggit",
 ]
 
@@ -147,9 +150,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-
-    'wagtail.core.middleware.SiteMiddleware',
-    'wagtail.contrib.redirects.middleware.RedirectMiddleware',
+    "wagtail.core.middleware.SiteMiddleware",
+    "wagtail.contrib.redirects.middleware.RedirectMiddleware",
 ]
 
 # STATIC
@@ -266,7 +268,7 @@ LOGGING = {
 
 
 # Wagtail
-WAGTAIL_SITE_NAME = 'findram.dev'
+WAGTAIL_SITE_NAME = "findram.dev"
 
 # Your stuff...
 # ------------------------------------------------------------------------------

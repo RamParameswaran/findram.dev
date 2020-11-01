@@ -3,10 +3,6 @@ from .base import env
 
 # GENERAL
 # ------------------------------------------------------------------------------
-# https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
-with open('SECRET_KEY.txt', 'r') as f:
-    x = f.readlines()
-    SECRET_KEY = x[0].strip()
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = ["findram.dev", "159.89.207.61"]
@@ -69,7 +65,8 @@ TEMPLATES[0]["OPTIONS"]["loaders"] = [  # noqa F405
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#default-from-email
 DEFAULT_FROM_EMAIL = env(
-    "DJANGO_DEFAULT_FROM_EMAIL", default="findram.dev professional portfolio <noreply@findram.dev>"
+    "DJANGO_DEFAULT_FROM_EMAIL",
+    default="findram.dev professional portfolio <noreply@findram.dev>",
 )
 # https://docs.djangoproject.com/en/dev/ref/settings/#server-email
 SERVER_EMAIL = env("DJANGO_SERVER_EMAIL", default=DEFAULT_FROM_EMAIL)
