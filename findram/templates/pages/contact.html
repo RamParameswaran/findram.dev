@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+{% include 'header.html' %}
+
+<!-- Banner  -->
+<div class="landingpage-panel" id="blog-banner">
+  <h2>&lt Reach out /&gt</h2>
+
+    <div class="row" style="padding-top: 40px">
+      <div class="offset-md-1 col-md-10 col-12">
+        <div id="aboutme_text" style="text-align: left">
+          <h4>Reach out directly to ...</h4>
+          <ul class="ne elBulletList elBulletListNew elBulletList2 listBorder0" data-bold="inherit" data-gramm="false" contenteditable="false">
+            <li style="line-height: 1rem; padding-bottom: 0.5rem;">
+              <i class="fa fa-arrow-right fa-fw" style="color: #f76c6c"></i><b></b> discuss how to use software to improve your business workflows<br>
+            </li>
+            <li style="line-height: 1rem; padding-bottom: 0.5rem;">
+              <i class="fa fa-arrow-right fa-fw" style="color: #f76c6c"></i> discuss AWS deployment and how to make your web products secure and scalable</li>
+            <li style="line-height: 1rem; padding-bottom: 0.5rem;">
+              <i class="fa fa-arrow-right fa-fw" style="color: #f76c6c"></i> chat about anything software, data and maker-culture!</li>
+          </ul>
+          <ul style="font-size: 1.3rem">
+            <li>email: <span style="font-weight: 600">ram@findram.dev</span></li>
+            <li>phone: <span style="font-weight: 600">+61 492 902 598</span></li>
+            <li><i class="fab fa-linkedin"></i> <a class="link" href="https://www.linkedin.com/in/ram-parameswaran/" target="_blank">linkedin</a></li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- About me -->
+<div class="landingpage-panel" id="about-me">
+  <div class="container" style="max-width: 800px">
+
+    <div class="row">
+      <div class="col-md-8">
+        <div id="aboutme_text">
+          <h4 style="font-weight: 600; margin-bottom: 20px">About me</h4>
+          <h4>My name is Ram. I build web applications that help businesses operate more efficiently.</h4>
+          <h5 style="font-weight: 600; margin-top: 20px">Expertise</h5>
+          <ul style="font-size: 1rem">
+            <li>Django and Django Rest Framework</li>
+            <li>Scalable deployments with Amazon Web Services (AWS)</li>
+            <li>Modern frontends with React.js</li>
+            <li>Payment processing (Stripe, Chargebee & Adyen)</li>
+            <li>DRM video content delivery</li>
+            <li>Wagtail CMS</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div id="aboutme_photo">
+          <img src="{% static 'images/Headshot.jpg' %}" alt="Ram Parameswaran" style="width:100%">
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Spacer -->
+
+<div class="landingpage-panel" id="portfolio-items">
+  <div class="container" style="max-width: 800px">
+    <div class="sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+{% endblock %}

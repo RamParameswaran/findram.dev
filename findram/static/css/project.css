@@ -13,7 +13,7 @@
   600
 }
 
-/* 
+/*
 ###### GENERAL
 */
 
@@ -42,8 +42,11 @@ a:hover {
   text-decoration: none;
 }
 
+.link:hover {
+  font-weight: 600;
+}
 
-/* 
+/*
 ###### HEADER
 */
 #header a {
@@ -52,9 +55,32 @@ a:hover {
   padding-right: 30px;
 }
 
+/* ####### GET IN TOUCH OVERLAY */
 
-/* 
-###### HOMEPAGE 
+#get-in-touch-overlay {
+  z-index: 9999;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+
+  width: 120px;
+  color: #000;
+  font-weight: 600;
+  background-color: #a8d0e6;
+  border: 1px solid #f76c6c;
+  -webkit-box-shadow: 6px 9px 5px 0px rgba(0, 0, 0, 0.11);
+  -moz-box-shadow: 6px 9px 5px 0px rgba(0, 0, 0, 0.11);
+  box-shadow: 6px 9px 5px 0px rgba(0, 0, 0, 0.11);
+}
+
+#get-in-touch-overlay:hover {
+  cursor: pointer;
+  background-color: rgba(210, 229, 240, 1);
+
+}
+
+/*
+###### HOMEPAGE
 */
 
 .landingpage-panel {
@@ -73,7 +99,7 @@ a:hover {
 /* Banner Section */
 
 #banner {
-  padding-top: 100px;
+  padding-top: 130px;
   padding-bottom: 100px;
   text-align: center;
   background: rgb(226, 239, 245);

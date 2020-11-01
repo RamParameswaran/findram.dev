@@ -13,11 +13,13 @@ functional web applications to solve your business problems{% endblock %}
 <!-- Header  -->
 {% include 'header.html' %}
 
+<a href="/contact" id="get-in-touch-overlay" class="btn btn-primary mx-auto">Get in touch!</a>
+
 <!-- Banner  -->
 <div class="landingpage-panel" id="banner">
   <h4 style="font-weight: 600; margin-bottom: 20px">Django & React Developer, Data Geek and Maker-Enthusiast</h4>
   <h3>I make functional web applications to solve your business problems</h3>
-  <a href="mailto:ramanan.parameswaran@gmail.com" target="_blank" class="btn btn-primary mx-auto">Get in touch!</a>
+  <a href="/contact" class="btn btn-primary mx-auto">Get in touch!</a>
 </div>
 
 <!-- About me -->
@@ -32,7 +34,8 @@ functional web applications to solve your business problems{% endblock %}
           <h5 style="font-weight: 600; margin-top: 20px">Expertise</h5>
           <ul style="font-size: 1rem">
             <li>Django and Django Rest Framework</li>
-            <li>React.js</li>
+            <li>Scalable deployments with Amazon Web Services (AWS)</li>
+            <li>Modern frontends with React.js</li>
             <li>Payment processing (Stripe, Chargebee & Adyen)</li>
             <li>DRM video content delivery</li>
             <li>Wagtail CMS</li>
@@ -48,8 +51,8 @@ functional web applications to solve your business problems{% endblock %}
     </div>
 
     <div class="col-12">
-      <a class="btn btn-primary" href="https://github.com/RamParameswaran" target="_blank">Github</a>
-      <a class="btn btn-primary" href="https://www.linkedin.com/in/ram-parameswaran/" target="_blank">LinkedIn</a>
+      <a class="btn btn-primary" href="https://github.com/RamParameswaran" target="_blank"><i class="fab fa-github"></i> Github</a>
+      <a class="btn btn-primary" href="https://www.linkedin.com/in/ram-parameswaran/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
     </div>
 
   </div>
@@ -111,12 +114,15 @@ functional web applications to solve your business problems{% endblock %}
           {% endif %}
         </div>
 
-
       </div>
 
       {% endfor %}
     </div>
+
+    <div class="sharethis-inline-share-buttons" style="padding-top: 70px"></div>
   </div>
+
+
 </div>
 
 <!-- Footer -->
