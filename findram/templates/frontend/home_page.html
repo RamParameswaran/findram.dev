@@ -27,7 +27,7 @@ functional web applications to solve your business problems{% endblock %}
   <div class="container" style="max-width: 800px">
 
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-8 my-4">
         <div id="aboutme_text">
           <h4 style="font-weight: 600; margin-bottom: 20px">You found me!</h4>
           <h4>My name is Ram. I build web applications that help businesses operate more efficiently.</h4>
@@ -48,11 +48,21 @@ functional web applications to solve your business problems{% endblock %}
           <img src="{{photo.url}}" alt="{{photo.alt}}" style="width:100%">
         </div>
       </div>
-    </div>
 
-    <div class="col-12">
-      <a class="btn btn-primary" href="https://github.com/RamParameswaran" target="_blank"><i class="fab fa-github"></i> Github</a>
-      <a class="btn btn-primary" href="https://www.linkedin.com/in/ram-parameswaran/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <div class="col-12 col-md-6 my-md-0 my-4">
+        <a href="https://www.youracclaim.com/badges/7f865eab-fd41-482a-8a4d-4267b921d252/public_url" target="_blank">
+          <img src="{% static 'images/aws-certified-developer-associate.png' %}"
+            alt="aws-developer-certification-badge" />
+        </a>
+      </div>
+
+      <div class="col-12 col-md-6 m-md-auto my-2">
+        <a class="btn btn-primary" href="https://github.com/RamParameswaran" target="_blank"><i
+            class="fab fa-github"></i>
+          Github</a>
+        <a class="btn btn-primary" href="https://www.linkedin.com/in/ram-parameswaran/" target="_blank"><i
+            class="fab fa-linkedin"></i> LinkedIn</a>
+      </div>
     </div>
 
   </div>
