@@ -78,8 +78,8 @@ functional web applications to solve your business problems{% endblock %}
     </div>
 
       <div class="row">
-            {% for item in self.portfolio_items.all %}
-          <div class="col-6">
+          {% for item in self.portfolio_items.all %}
+          <div class="col-12 col-md-6">
             <div class="card" id="{{item.id}}" style="padding-bottom: 10px; min-height: 600px">
               <!-- Card image -->
               <div style="text-align: center; margin-bottom: 10px; overflow: hidden">
