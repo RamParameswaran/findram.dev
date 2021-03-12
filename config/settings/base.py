@@ -154,26 +154,32 @@ MIDDLEWARE = [
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
 ]
 
-# STATIC
-# ------------------------------------------------------------------------------
-# https://docs.djangoproject.com/en/dev/ref/settings/#static-root
-STATIC_ROOT = str(ROOT_DIR("staticfiles"))
-# https://docs.djangoproject.com/en/dev/ref/settings/#static-url
+# STATIC & MEDIA
 STATIC_URL = "/static/"
-# https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
-STATICFILES_DIRS = [str(APPS_DIR.path("static"))]
-# https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
+MEDIA_URL = "/media/"
+STATIC_ROOT = str(ROOT_DIR("staticfiles"))
+MEDIA_ROOT = str(APPS_DIR("media"))
+
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
+STATICFILES_DIRS = [str(APPS_DIR.path("static"))]
 
-# MEDIA
-# ------------------------------------------------------------------------------
-# https://docs.djangoproject.com/en/dev/ref/settings/#media-root
-MEDIA_ROOT = str(APPS_DIR("media"))
-# https://docs.djangoproject.com/en/dev/ref/settings/#media-url
-MEDIA_URL = "/media/"
+if env.str("S3_RESOURCES_BUCKET_NAME", default=None) is not None:
+    AWS_ACCESS_KEY_ID = env.str("AWS_ACCESS_KEY_ID", default=None)
+    AWS_SECRET_ACCESS_KEY = env.str("AWS_SECRET_ACCESS_KEY", default=None)
+
+    AWS_DEFAULT_ACL = None
+    AWS_QUERYSTRING_AUTH = False
+
+    AWS_S3_REGION_NAME = env.str("AWS_REGION_NAME", default="ap-southeast-2")
+    DEFAULT_FILE_STORAGE = "config.s3_storages.MediaStorage"
+    STATICFILES_STORAGE = "config.s3_storages.StaticStorage"
+
+    STATIC_URL = (
+        f"https://{env.str('S3_RESOURCES_BUCKET_NAME')}.s3.amazonaws.com/static/"
+    )
 
 # TEMPLATES
 # ------------------------------------------------------------------------------
