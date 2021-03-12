@@ -269,6 +269,9 @@ LOGGING = {
 
 # Wagtail
 WAGTAIL_SITE_NAME = "findram.dev"
+WAGTAILIMAGES_FORMAT_CONVERSIONS = {
+    'webp': 'webp',
+}
 
 # Your stuff...
 # ------------------------------------------------------------------------------
