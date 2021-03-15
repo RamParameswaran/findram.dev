@@ -27,6 +27,12 @@
     {% block css %}
 
     <!-- Latest compiled and minified Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="{% static 'css/all.min.css' %}" rel="stylesheet">
+
+    <!-- This file stores project-specific CSS -->
+    <link href="{% static 'css/project.css' %}?v=11" rel="stylesheet">
+    <link href="{% static 'css/blog.css' %}?v=11" rel="stylesheet">
 
     {% endblock %}
 
@@ -46,12 +52,6 @@
     {% block content %}{% endblock content %}
     {% block modal %}{% endblock modal %}
 
-    <link href="{% static 'css/all.min.css' %}" rel="stylesheet">
-    <link href="{% static 'css/project.css' %}?v=11" rel="stylesheet">
-    <link href="{% static 'css/blog.css' %}?v=11" rel="stylesheet">
-    
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
