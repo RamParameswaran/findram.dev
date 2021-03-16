@@ -287,5 +287,5 @@ pip-selfcheck.json
 .pytest_cache/
 
 
-findram/media
-findram.db
+app/findram/media/*
+app/findram.db

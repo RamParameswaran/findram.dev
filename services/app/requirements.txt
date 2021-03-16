@@ -1,0 +1,16 @@
+black==19.10b0  # https://github.com/ambv/black
+django==2.2.9  # pyup: < 3.0  # https://www.djangoproject.com/
+django-allauth==0.41.0  # https://github.com/pennersr/django-allauth
+django-coverage-plugin==1.6.0  # https://github.com/nedbat/django_coverage_plugin
+django-crispy-forms==1.8.1  # https://github.com/django-crispy-forms/django-crispy-forms
+django-debug-toolbar==2.1  # https://github.com/jazzband/django-debug-toolbar
+django-environ==0.4.5  # https://github.com/joke2k/django-environ
+django-redis==4.11.0  # https://github.com/niwinz/django-redis
+django-storages[boto3]==1.8  # https://github.com/jschneier/django-storages
+django-taggit
+flake8==3.7.9  # https://github.com/PyCQA/flake8
+gunicorn==20.0.4  # https://github.com/benoitc/gunicorn
+psycopg2-binary==2.8.4  # https://github.com/psycopg/psycopg2
+pytest-django==3.7.0  # https://github.com/pytest-dev/pytest-django
+redis==3.3.11  # https://github.com/antirez/redis
+wagtail==2.7.1 # https://pypi.org/project/wagtail/

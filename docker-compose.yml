@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+  # Django app
+  app:
+    build:
+      context: .
+      dockerfile: ./services/app/Dockerfile
+    command: dev
+    ports:
+      - 8000:8000
+      - 8001:8001
+    volumes:
+      - ./app:/usr/src/app
+    environment:
+      - DEBUG=True
+      - PORT=8000
+      # - POSTGRES_DB_NAME=findam
+      # - POSTGRES_PORT_5432_TCP_ADDR=postgres
+      # - POSTGRES_PORT_5432_TCP_PORT=5432
+      # - POSTGRES_USER=postgres
+      # - POSTGRES_PASSWORD=
+      - SECRET_KEY=m@+i3r!wv)fn*+23f5sy%vmap6ba_^*iybe5m+%*nxhq1y6jth
+      - WSGI_MODULE=config.wsgi:application
+
+  web:
+    build:
+      context: ./
+      dockerfile: ./services/nginx/Dockerfile
+    ports:
+      - 80:80
+    depends_on:
+      - app
