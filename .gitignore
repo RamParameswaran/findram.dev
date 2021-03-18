@@ -289,3 +289,8 @@ pip-selfcheck.json
 
 app/findram/media/*
 app/findram.db
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
