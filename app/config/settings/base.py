@@ -1,7 +1,6 @@
 """
 Base settings to build other settings files upon.
 """
-
 import environ
 
 ROOT_DIR = (
@@ -14,7 +13,7 @@ env = environ.Env()
 READ_DOT_ENV_FILE = True
 if READ_DOT_ENV_FILE:
     # OS environment variables take precedence over variables from .env
-    env.read_env(str(ROOT_DIR.path(".env")))
+    env.read_env(str(ROOT_DIR.path("../.env")))
 
 SECRET_KEY = env.str(
     "SECRET_KEY", default="m@+i3r!wv)fn*+23f5sy%vmap6ba_^*iybe5m+%*nxhq1y6jth"

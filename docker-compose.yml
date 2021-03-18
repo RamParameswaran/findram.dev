@@ -13,15 +13,10 @@ services:
     volumes:
       - ./app:/usr/src/app
     environment:
-      - DEBUG=True
       - PORT=8000
-      # - POSTGRES_DB_NAME=findam
-      # - POSTGRES_PORT_5432_TCP_ADDR=postgres
-      # - POSTGRES_PORT_5432_TCP_PORT=5432
-      # - POSTGRES_USER=postgres
-      # - POSTGRES_PASSWORD=
-      - SECRET_KEY=m@+i3r!wv)fn*+23f5sy%vmap6ba_^*iybe5m+%*nxhq1y6jth
       - WSGI_MODULE=config.wsgi:application
+    env_file:
+      - .env
 
   web:
     build:

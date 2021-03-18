@@ -40,7 +40,7 @@ ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 COPY app .
 
 # Explicitly run the manage.py with python, without it doesn't work on some windows versions
-RUN python manage.py collectstatic --noinput
+# RUN python manage.py collectstatic --noinput
 
 # Run uWSGI by default
 CMD ["uwsgi"]
