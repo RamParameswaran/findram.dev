@@ -3,9 +3,12 @@ from django.db import models
 
 
 from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, MultiFieldPanel
+from wagtail.core import blocks
 from wagtail.core.models import Page, Orderable
-from wagtail.core.fields import RichTextField
+from wagtail.core.fields import RichTextField, StreamField
+from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel
 from wagtail.images.edit_handlers import ImageChooserPanel
+from wagtail.images.blocks import ImageChooserBlock
 from wagtail.search import index
 
 from modelcluster.contrib.taggit import ClusterTaggableManager
@@ -28,6 +31,26 @@ all_features = [  # 'h1', 'h2', 'h3',
     "code",  # 'superscript', 'subscript', 'strikethrough',
     "blockquote",
 ]
+
+CODE_CHOICES = [
+    ("python", "python"),
+    ("javascript", "javascript"),
+    ("css", "css"),
+    ("markup", "markup"),
+    ("html", "html"),
+    ("go", "go"),
+    ("bash", "bash"),
+]
+
+
+class CodeBlock(blocks.StructBlock):
+    language = blocks.ChoiceBlock(choices=CODE_CHOICES, default="python")
+    text = blocks.TextBlock()
+
+    class Meta:
+        template = "blocks/codeblock.html"
+        icon = "openquote"
+        label = "Code Block"
 
 
 class PortfolioItemTag(TaggedItemBase):
@@ -100,9 +123,7 @@ class HomePage(Page):
             heading="About me",
         ),
         MultiFieldPanel(
-            [
-                InlinePanel("portfolio_items", min_num=1, label="portfolio item"),
-            ],
+            [InlinePanel("portfolio_items", min_num=1, label="portfolio item"),],
             heading="Portfolio items",
         ),
     ]
@@ -128,7 +149,13 @@ class BlogPostTag(TaggedItemBase):
 class PostPage(Page):
     template = "frontend/post_page.html"
 
-    body = RichTextField(blank=True, features=all_features)
+    body = StreamField(
+        [
+            ("rich_text", blocks.RichTextBlock(features=all_features)),
+            ("code", CodeBlock(label="Code")),
+        ]
+    )
+
     blurb = RichTextField(blank=True, features=all_features)
     seo_description = models.CharField(blank=True, null=True, max_length=150)
     author = models.CharField(
@@ -144,7 +171,7 @@ class PostPage(Page):
     )
 
     content_panels = Page.content_panels + [
-        FieldPanel("body", classname="full"),
+        StreamFieldPanel("body", classname="full"),
         FieldPanel("blurb", classname="full"),
         FieldPanel("seo_description", classname="full"),
         FieldPanel("author", classname="full"),

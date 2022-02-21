@@ -47,7 +47,9 @@
           </div>
 
           <div class="col-12 blog-item-section">
-            {{page.body|richtext}}
+            {% for block in page.body %}
+                <section>{% include_block block %}</section>
+            {% endfor %}
           </div>
 
           <div class="col-12 blog-item-section" style="padding-bottom: 1.5em">
